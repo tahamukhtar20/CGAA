@@ -1,0 +1,56 @@
+seed: 42
+
+paths:
+  imagenet_dir: /ds/images/imagenet
+  dtd_dir: dtd
+  results_dir: ./results
+  cav_dir: ./results/cavs
+
+model:
+  arch: resnet50
+  weights: IMAGENET1K_V1
+
+normalization:
+  mean: [0.485, 0.456, 0.406]
+  std: [0.229, 0.224, 0.225]
+
+cav:
+  samples_per_class: 100
+  batch_size: 32
+  test_size: 0.2
+  alpha: 0.01
+  max_iter: 1000
+
+attack:
+  eps: 0.06274509803921569   # 16/255
+  alpha: 0.00784313725490196 # 2/255
+  steps: 50
+  lambda_val: 100.0
+  batch_size: 4
+
+# Concept catalog. Each layer maps to a string name used by ResNet.
+# Each concept entry declares the ImageNet target class, the texture concept
+# (must match a folder under dtd/images/), the push direction (+1 or -1),
+# and the WNID of the target class (for ImageFolder-style loading).
+concept_layers:
+  striped: layer4
+  dotted: layer4
+
+concept_bank:
+  zebra_stripes:
+    target_id: 340
+    concept: striped
+    direction: -1
+    wnid: n02391049
+  apple_stripes:
+    target_id: 948
+    concept: striped
+    direction: 1
+    wnid: n07742313
+  # Only used to train the dotted CAV needed for Test 4 (cross-concept distinctness).
+  # The zebra/dotted target pair is not a meaningful experiment on its own.
+  zebra_dotted:
+    target_id: 340
+    concept: dotted
+    direction: 1
+    wnid: n02391049

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code or findings, please cite it as below."
+type: software
+title: "CGAA: Concept-Guided Adversarial Attacks"
+abstract: >
+  An adversarial attack that adds a CAV-based concept-alignment term to the BIM loss.
+  Archived after Phase 1 smoke tests revealed that the approach moves linear probe
+  outputs without producing genuine concept changes (mean-pool gradient pathology),
+  and that the core entanglement claim was occupied by Nicolson et al. (TMLR 2025).
+authors:
+  - family-names: Mukhtar
+    given-names: Muhammad Taha
+    email: tahamukhtar20@gmail.com
+repository-code: "https://github.com/tahamukhtar20/CGAA"
+doi: 10.5281/zenodo.20574533
+publisher: Zenodo
+license: MIT
+date-released: "2026-06-06"
+keywords:
+  - adversarial attacks
+  - concept activation vectors
+  - TCAV
+  - interpretability
+  - concept entanglement
