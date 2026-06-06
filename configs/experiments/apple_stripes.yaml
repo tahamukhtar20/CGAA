@@ -1,0 +1,3 @@
+# Push a Granny Smith apple TOWARD the "striped" concept (direction: +1).
+# Overrides on top of configs/default.yaml.
+experiment: apple_stripes

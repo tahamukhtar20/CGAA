@@ -1,5 +1,10 @@
 torch
 torchvision
-torchattacks
-captum
+pyyaml
+numpy
+scikit-learn
+scipy
+matplotlib
+opencv-python-headless
+Pillow
 tqdm
